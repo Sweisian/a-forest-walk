@@ -5,6 +5,7 @@ using UnityEngine;
 public class ColorChanger : MonoBehaviour
 {
     public Material myMaterial;
+    public string colorCode;
 
     void OnEnable()
     {
@@ -23,7 +24,7 @@ public class ColorChanger : MonoBehaviour
 
     private void ChangeColor()
     {
-        myMaterial.SetColor("Color_9565E91F", Random.ColorHSV());
+        myMaterial.SetColor(colorCode, Random.ColorHSV());
     }
    
 }

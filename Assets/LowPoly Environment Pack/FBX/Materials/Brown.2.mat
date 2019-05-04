@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Brown.2
-  m_Shader: {fileID: 4800000, guid: 282d36b699fbe2a45a2a7cf5b32d9a6b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6f0a34e609a467e46b898977f74d910a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -61,11 +61,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
+    - _Amount: 0
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DissolveAmount: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
@@ -83,7 +85,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_9565E91F: {r: 0.36818036, g: 0.40822178, b: 0.3294822, a: 1}
-    - _Color: {r: 0.6500052, g: 0.33289504, b: 0.071998775, a: 1}
+    - Color_9565E91F: {r: 0.38679248, g: 0.19415642, b: 0.056559276, a: 1}
+    - Color_FD9D6530: {r: 0.41509432, g: 0.25502524, b: 0, a: 0}
+    - _Color: {r: 0.09840059, g: 0.039782543, b: 0.1359203, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

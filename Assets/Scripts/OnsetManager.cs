@@ -88,7 +88,7 @@ public class OnsetManager : MonoBehaviour
 
         if (onset_array[onset_idx] < cur_time)
         {
-            audioSource.PlayOneShot(click, .4f);
+            //audioSource.PlayOneShot(click, .4f);
             OnOnset();
             onset_idx++;
         }
