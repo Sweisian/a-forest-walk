@@ -68,6 +68,10 @@ public class ShaderController : MonoBehaviour
 
     void Start()
     {
+        //Renderer rend = GetComponent<Renderer>();
+        //myMaterial = new Material(Shader.Find("Shader Graphs/MasterShader"));
+        //rend.material = myMaterial;
+
         if (gameObject.tag == "Bush")
             myMaterial.SetColor(colorCode, PickRandomGreen());
         else if (gameObject.tag == "Rock")

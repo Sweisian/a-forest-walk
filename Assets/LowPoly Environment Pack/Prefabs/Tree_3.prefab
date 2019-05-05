@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4796055755971548}
   - component: {fileID: 33862529069753526}
   - component: {fileID: 23005653954299074}
+  - component: {fileID: 1249127500120445141}
   - component: {fileID: 2476061188799456584}
   m_Layer: 0
   m_Name: Leaves_1
@@ -78,6 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1249127500120445141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157979572161508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 2100000, guid: 546fdfe5df99cb34bb14981f56cfca29, type: 2}
+  colorCode: _Color
 --- !u!114 &2476061188799456584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +160,7 @@ GameObject:
   - component: {fileID: 4782924333931078}
   - component: {fileID: 33674980657963814}
   - component: {fileID: 23084094499193252}
+  - component: {fileID: 3673322541912925073}
   - component: {fileID: 4139246172902097861}
   m_Layer: 0
   m_Name: Leaves_2
@@ -212,6 +228,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3673322541912925073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363467826424036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 2100000, guid: 546fdfe5df99cb34bb14981f56cfca29, type: 2}
+  colorCode: _Color
 --- !u!114 &4139246172902097861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +277,7 @@ GameObject:
   - component: {fileID: 4156965540426916}
   - component: {fileID: 33607138604387714}
   - component: {fileID: 23769861151005894}
+  - component: {fileID: 3686999031740256680}
   - component: {fileID: 1270548413609505392}
   m_Layer: 0
   m_Name: Leaves_6
@@ -314,6 +345,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3686999031740256680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677148330175816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 2100000, guid: 546fdfe5df99cb34bb14981f56cfca29, type: 2}
+  colorCode: _Color
 --- !u!114 &1270548413609505392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +394,7 @@ GameObject:
   - component: {fileID: 4494329581689332}
   - component: {fileID: 33591743523650964}
   - component: {fileID: 23968443958065590}
+  - component: {fileID: 202754395746489580}
   - component: {fileID: 2315390452035478323}
   m_Layer: 0
   m_Name: Leaves_4
@@ -416,6 +462,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &202754395746489580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814352368867668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 2100000, guid: 546fdfe5df99cb34bb14981f56cfca29, type: 2}
+  colorCode: _Color
 --- !u!114 &2315390452035478323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +511,7 @@ GameObject:
   - component: {fileID: 4745129428687622}
   - component: {fileID: 33937757552896668}
   - component: {fileID: 23962305470541650}
+  - component: {fileID: 8618705720580366958}
   - component: {fileID: 7694067936974525875}
   m_Layer: 0
   m_Name: Leaves_3
@@ -518,6 +579,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8618705720580366958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832069045352994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 2100000, guid: 546fdfe5df99cb34bb14981f56cfca29, type: 2}
+  colorCode: _Color
 --- !u!114 &7694067936974525875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,6 +628,7 @@ GameObject:
   - component: {fileID: 4546768433327348}
   - component: {fileID: 33303436672164488}
   - component: {fileID: 23860695082177804}
+  - component: {fileID: 6806578907871615046}
   - component: {fileID: 2156485262706059944}
   m_Layer: 0
   m_Name: Leaves_5
@@ -620,6 +696,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6806578907871615046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860701785398736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 2100000, guid: 546fdfe5df99cb34bb14981f56cfca29, type: 2}
+  colorCode: _Color
 --- !u!114 &2156485262706059944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,6 +745,7 @@ GameObject:
   - component: {fileID: 4165376534382912}
   - component: {fileID: 33633330959154196}
   - component: {fileID: 23439739506746048}
+  - component: {fileID: 9083962441522675307}
   - component: {fileID: 3483745658515903190}
   m_Layer: 0
   m_Name: Tree_3
@@ -722,6 +813,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &9083962441522675307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910694288608838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 2100000, guid: fc45bd3e9d781c6469cb7e33fd1c8bd0, type: 2}
+  colorCode: _Color
 --- !u!114 &3483745658515903190
 MonoBehaviour:
   m_ObjectHideFlags: 0

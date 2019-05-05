@@ -11,12 +11,10 @@ GameObject:
   - component: {fileID: 4112504727747986}
   - component: {fileID: 33761035236259898}
   - component: {fileID: 23718810566272436}
-  - component: {fileID: 110577241178370823}
-  - component: {fileID: 1204377631096608638}
-  - component: {fileID: 7572305275305495290}
+  - component: {fileID: 939393486905521928}
   m_Layer: 0
   m_Name: Bush_1
-  m_TagString: Untagged
+  m_TagString: Bush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &110577241178370823
+--- !u!114 &939393486905521928
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,37 +88,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1732752170155260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d229a223b1d454d94755d1de154588, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fb8cbe32ba663e4e9db4d4c964e4782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myMaterial: {fileID: 2100000, guid: 05c3b35dce48bfb44a9ce93ae526df18, type: 2}
+  shouldColor: 1
+  colorCode: _Color
+  shouldVertex: 0
   displacementDelta: 2
   lerpMultiplier: 7
---- !u!114 &1204377631096608638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732752170155260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 711ee8433c789454a9f7c83726f2c37e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMaterial: {fileID: 2100000, guid: 05c3b35dce48bfb44a9ce93ae526df18, type: 2}
-  colorCode: _Color
---- !u!114 &7572305275305495290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732752170155260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 711ee8433c789454a9f7c83726f2c37e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMaterial: {fileID: 2100000, guid: 94387ac3fe852d549966d245def277be, type: 2}
-  colorCode: _Color
+  vertexCode: _Amount
+  shouldDissolve: 0
+  dissolveMultiplier: 7
+  dissolveMin: 0
+  dissolveMax: 0.6
+  dissolveCode: _DissolveAmount
