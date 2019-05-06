@@ -12,7 +12,7 @@ public class OnsetManager : MonoBehaviour
     private AudioSource audioSource;
 
     public string json_filepath = "/python_materials/output/Seven_Nation_Army.json";
-    private float cur_time = 0;
+    public float cur_time = 0;
     private float[] onset_array;
     private int onset_idx = 0;
     private bool shouldPlay = false;
