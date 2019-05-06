@@ -27,7 +27,12 @@ public class ShaderController : MonoBehaviour
     public float sizeMin = .1f;
     public float sizeMax = 3f;
 
-    private Color32 TreeBrown = new Color32(119, 54, 6, 255);
+    private Color32 TreeBrownOne = new Color32(119, 54, 6, 255);
+    private Color32 TreeBrownTwo = new Color32(139, 69, 19, 255);
+    private Color32 TreeBrownThree = new Color32(160, 82, 45, 255);
+    private Color32 TreeBrownFour = new Color32(48, 34, 4, 255);
+    private Color32 TreeBrownFive = new Color32(38, 21, 7, 255);
+
     private Color32 LeafGreenOne = new Color32(119, 116, 19, 255);
     private Color32 LeafGreenTwo = new Color32(31, 107, 0, 255);
     private Color32 LeafGreenThree = new Color32(116, 161, 82, 255);
@@ -75,6 +80,33 @@ public class ShaderController : MonoBehaviour
         return returnColor;
     }
 
+    private Color32 PickRandomBrown()
+    {
+        int randomInt = Random.Range(0, 5);
+        Color32 returnColor = Color.white;
+
+        switch (randomInt)
+        {
+            case 0:
+                returnColor = TreeBrownOne;
+                break;
+            case 1:
+                returnColor = TreeBrownTwo;
+                break;
+            case 2:
+                returnColor = TreeBrownThree;
+                break;
+            case 3:
+                returnColor = TreeBrownFour;
+                break;
+            case 4:
+                returnColor = TreeBrownFive;
+                break;
+        }
+
+        return returnColor;
+    }
+
     void Awake()
     {
         Renderer rend = GetComponent<Renderer>();
@@ -88,7 +120,11 @@ public class ShaderController : MonoBehaviour
         else if (gameObject.tag == "Ground")
             myMaterial.SetColor(colorCode, GroundGreen);
         else if (gameObject.tag == "Trunk")
-            myMaterial.SetColor(colorCode, TreeBrown);
+            myMaterial.SetColor(colorCode, PickRandomBrown());
+        else if (gameObject.tag == "Log")
+            myMaterial.SetColor(colorCode, PickRandomBrown());
+        else if (gameObject.tag == "Plant")
+            myMaterial.SetColor(colorCode, PickRandomGreen());
         else if (gameObject.tag == "Leaf")
             myMaterial.SetColor(colorCode, PickRandomGreen());
     }
