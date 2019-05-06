@@ -127,6 +127,8 @@ public class ShaderController : MonoBehaviour
             myMaterial.SetColor(colorCode, PickRandomGreen());
         else if (gameObject.tag == "Leaf")
             myMaterial.SetColor(colorCode, PickRandomGreen());
+        else if (gameObject.tag == "Cloud")
+            myMaterial.SetColor(colorCode, Color.white);
     }
 
 
