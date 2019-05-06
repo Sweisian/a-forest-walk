@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4063541705819162}
   - component: {fileID: 33142601234234008}
   - component: {fileID: 23289968634786746}
+  - component: {fileID: 4545449095593270808}
   - component: {fileID: 1461032252298639382}
   m_Layer: 0
   m_Name: Log_1
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4545449095593270808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255758057252634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c892c4bb54e5afc418a48640018d8b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGroup: 0
 --- !u!114 &1461032252298639382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +113,11 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3

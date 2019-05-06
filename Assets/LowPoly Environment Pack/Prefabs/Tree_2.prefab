@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4546704927118326}
   - component: {fileID: 33139627715516554}
   - component: {fileID: 23285803129993140}
-  - component: {fileID: 880837854974757370}
   - component: {fileID: 7479874662592882853}
   m_Layer: 0
   m_Name: Leaves_4
@@ -79,20 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &880837854974757370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041262027369258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMaterial: {fileID: 2100000, guid: 9bceac9e437c11447a0839f938aaa270, type: 2}
-  colorCode: _Color
 --- !u!114 &7479874662592882853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,10 +98,14 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3
 --- !u!1 &1327385724211766
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,9 +115,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4905684144481780}
+  - component: {fileID: 5650926396650181097}
   m_Layer: 0
   m_Name: Tree_2
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +139,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5650926396650181097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327385724211766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c892c4bb54e5afc418a48640018d8b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGroup: 0
 --- !u!1 &1369174786134318
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +163,6 @@ GameObject:
   - component: {fileID: 4097772645947218}
   - component: {fileID: 33898777821233732}
   - component: {fileID: 23271817832174456}
-  - component: {fileID: 1166853776078888519}
   - component: {fileID: 5000119287463613335}
   m_Layer: 0
   m_Name: Leaves_2
@@ -228,20 +230,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1166853776078888519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369174786134318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMaterial: {fileID: 2100000, guid: 9bceac9e437c11447a0839f938aaa270, type: 2}
-  colorCode: _Color
 --- !u!114 &5000119287463613335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,10 +250,14 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3
 --- !u!1 &1484125766157276
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +269,6 @@ GameObject:
   - component: {fileID: 4119070734712458}
   - component: {fileID: 33844102059508620}
   - component: {fileID: 23072036573470650}
-  - component: {fileID: 1230362494798226181}
   - component: {fileID: 7107497884601593902}
   m_Layer: 0
   m_Name: Leaves_3
@@ -345,20 +336,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1230362494798226181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484125766157276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMaterial: {fileID: 2100000, guid: 9bceac9e437c11447a0839f938aaa270, type: 2}
-  colorCode: _Color
 --- !u!114 &7107497884601593902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,10 +356,14 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3
 --- !u!1 &1665610073650930
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +375,6 @@ GameObject:
   - component: {fileID: 4920880156530424}
   - component: {fileID: 33946893809320316}
   - component: {fileID: 23120510417258372}
-  - component: {fileID: 2909039333588718644}
   - component: {fileID: 4623805315506772175}
   m_Layer: 0
   m_Name: Tree_2
@@ -462,20 +442,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2909039333588718644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665610073650930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMaterial: {fileID: 2100000, guid: f7c2deb7be33c61418c105b4da4da2d8, type: 2}
-  colorCode: _Color
 --- !u!114 &4623805315506772175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,10 +462,14 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3
 --- !u!1 &1724857178869512
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +481,6 @@ GameObject:
   - component: {fileID: 4603389905140684}
   - component: {fileID: 33344024451374768}
   - component: {fileID: 23610091629715690}
-  - component: {fileID: 6741332538655061425}
   - component: {fileID: 1598751067836693235}
   m_Layer: 0
   m_Name: Leaves_1
@@ -579,20 +548,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6741332538655061425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724857178869512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMaterial: {fileID: 2100000, guid: 9bceac9e437c11447a0839f938aaa270, type: 2}
-  colorCode: _Color
 --- !u!114 &1598751067836693235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,10 +568,14 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3
 --- !u!1 &1908851322758640
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +622,6 @@ GameObject:
   - component: {fileID: 4925409345134686}
   - component: {fileID: 33493269002184798}
   - component: {fileID: 23652299048617498}
-  - component: {fileID: 3667817850473253108}
   - component: {fileID: 5881996024217388002}
   m_Layer: 0
   m_Name: Leaves_5
@@ -731,20 +689,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3667817850473253108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954961477350992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4a537f22598db4da6330c8a65d1bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMaterial: {fileID: 2100000, guid: 9bceac9e437c11447a0839f938aaa270, type: 2}
-  colorCode: _Color
 --- !u!114 &5881996024217388002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +709,11 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3

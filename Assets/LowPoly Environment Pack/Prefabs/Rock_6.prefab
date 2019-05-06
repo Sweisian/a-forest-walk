@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33359690063687408}
   - component: {fileID: 23527068386015058}
   - component: {fileID: 64564875557554250}
+  - component: {fileID: 613131713266735427}
   - component: {fileID: 4356135846665754645}
   m_Layer: 0
   m_Name: Rock_6
@@ -93,6 +94,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 71bb44319f15e0741846c4fad009f013, type: 3}
+--- !u!114 &613131713266735427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106205639809762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c892c4bb54e5afc418a48640018d8b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGroup: 0
 --- !u!114 &4356135846665754645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +127,11 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3

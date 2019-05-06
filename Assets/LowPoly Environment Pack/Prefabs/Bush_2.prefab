@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4437459323509006}
   - component: {fileID: 33343903869988276}
   - component: {fileID: 23302719169258506}
+  - component: {fileID: 8082877111740961640}
   - component: {fileID: 4375543095527975235}
   m_Layer: 0
   m_Name: Bush_2
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8082877111740961640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715284614105008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c892c4bb54e5afc418a48640018d8b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGroup: 0
 --- !u!114 &4375543095527975235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +113,11 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3

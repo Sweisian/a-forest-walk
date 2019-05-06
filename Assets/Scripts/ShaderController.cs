@@ -16,10 +16,16 @@ public class ShaderController : MonoBehaviour
 
     public bool shouldDissolve = false;
     private float dissolveAmount;
-    public float dissolveMultiplier = 7f;
+    public float dissolveLerpMultiplier = 7f;
     public float dissolveMin = 0f;
     public float dissolveMax = .6f;
     public string dissolveCode = "_DissolveAmount";
+
+    public bool shouldSize = false;
+    private float goalSize = 1;
+    public float sizeLerpMultiplier = 3;
+    public float sizeMin = .1f;
+    public float sizeMax = 3f;
 
     private Color32 TreeBrown = new Color32(119, 54, 6, 255);
     private Color32 LeafGreenOne = new Color32(119, 116, 19, 255);
@@ -34,8 +40,10 @@ public class ShaderController : MonoBehaviour
         OnsetManager.OnOnset += ChangeColor;
         OnsetManager.OnOnset += ChangeVertex;
         OnsetManager.OnOnset += ChangeDissolve;
+        OnsetManager.OnOnset += ChangeSize;
         myMaterial.SetFloat(vertexCode, 0);
         myMaterial.SetFloat(dissolveCode, 0);
+        goalSize = 1;
     }
 
     void OnDisable()
@@ -43,6 +51,7 @@ public class ShaderController : MonoBehaviour
         OnsetManager.OnOnset -= ChangeColor;
         OnsetManager.OnOnset -= ChangeVertex;
         OnsetManager.OnOnset -= ChangeDissolve;
+        OnsetManager.OnOnset -= ChangeSize;
     }
 
     private Color32 PickRandomGreen()
@@ -66,11 +75,11 @@ public class ShaderController : MonoBehaviour
         return returnColor;
     }
 
-    void Start()
+    void Awake()
     {
-        //Renderer rend = GetComponent<Renderer>();
-        //myMaterial = new Material(Shader.Find("Shader Graphs/MasterShader"));
-        //rend.material = myMaterial;
+        Renderer rend = GetComponent<Renderer>();
+        myMaterial = new Material(Shader.Find("Shader Graphs/MasterShader"));
+        rend.material = myMaterial;
 
         if (gameObject.tag == "Bush")
             myMaterial.SetColor(colorCode, PickRandomGreen());
@@ -78,6 +87,10 @@ public class ShaderController : MonoBehaviour
             myMaterial.SetColor(colorCode, RockGrey);
         else if (gameObject.tag == "Ground")
             myMaterial.SetColor(colorCode, GroundGreen);
+        else if (gameObject.tag == "Trunk")
+            myMaterial.SetColor(colorCode, TreeBrown);
+        else if (gameObject.tag == "Leaf")
+            myMaterial.SetColor(colorCode, PickRandomGreen());
     }
 
 
@@ -92,27 +105,39 @@ public class ShaderController : MonoBehaviour
             
         if (shouldDissolve)
         {
-            dissolveAmount = Mathf.Lerp(dissolveAmount, 0, Time.deltaTime * dissolveMultiplier);
+            dissolveAmount = Mathf.Lerp(dissolveAmount, 0, Time.deltaTime * dissolveLerpMultiplier);
             myMaterial.SetFloat(dissolveCode, dissolveAmount);
         }
-        
+
+        if (shouldSize)
+        {
+            float currSize = Mathf.Lerp(gameObject.transform.localScale.x, goalSize, Time.deltaTime * sizeLerpMultiplier);
+            transform.localScale = new Vector3(currSize, currSize, currSize);
+        }
+
     }
 
     void ChangeVertex()
     {
         if(shouldVertex)
-        displacementAmount += displacementDelta;
+            displacementAmount += displacementDelta;
     }
 
     void ChangeDissolve()
     {
         if (shouldDissolve)
-        dissolveAmount = dissolveMax;
+            dissolveAmount = dissolveMax;
     }
 
     private void ChangeColor()
     {   
         if(shouldColor)
-        myMaterial.SetColor(colorCode, Random.ColorHSV());
+            myMaterial.SetColor(colorCode, Random.ColorHSV());
+    }
+
+    private void ChangeSize()
+    {
+        if (shouldSize)
+            goalSize = Random.Range(sizeMin, sizeMax);
     }
 }

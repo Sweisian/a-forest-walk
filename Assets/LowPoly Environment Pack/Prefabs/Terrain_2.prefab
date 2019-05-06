@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33094163062242374}
   - component: {fileID: 23868062746784962}
   - component: {fileID: 64868549691657868}
+  - component: {fileID: 3720016707772151063}
   - component: {fileID: 724598469162227964}
   m_Layer: 0
   m_Name: Terrain_2
@@ -93,6 +94,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: cc767c10d36eaa748aaa5b008bf78528, type: 3}
+--- !u!114 &3720016707772151063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032551483747090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c892c4bb54e5afc418a48640018d8b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGroup: 2
 --- !u!114 &724598469162227964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +127,11 @@ MonoBehaviour:
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3

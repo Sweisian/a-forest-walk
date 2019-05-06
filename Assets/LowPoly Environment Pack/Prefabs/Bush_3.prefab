@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4951361981142268}
   - component: {fileID: 33631546342493948}
   - component: {fileID: 23753668411532500}
+  - component: {fileID: 31649026809377807}
   - component: {fileID: 3303393374737999302}
   m_Layer: 0
   m_Name: Bush_3
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &31649026809377807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309910605144772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c892c4bb54e5afc418a48640018d8b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGroup: 0
 --- !u!114 &3303393374737999302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,14 +106,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMaterial: {fileID: 2100000, guid: 05c3b35dce48bfb44a9ce93ae526df18, type: 2}
-  shouldColor: 1
+  shouldColor: 0
   colorCode: _Color
   shouldVertex: 0
   displacementDelta: 2
   lerpMultiplier: 7
   vertexCode: _Amount
   shouldDissolve: 0
-  dissolveMultiplier: 7
+  dissolveLerpMultiplier: 7
   dissolveMin: 0
   dissolveMax: 0.6
   dissolveCode: _DissolveAmount
+  shouldSize: 0
+  sizeLerpMultiplier: 3
+  sizeMin: 0.1
+  sizeMax: 3

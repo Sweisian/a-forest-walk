@@ -21,6 +21,31 @@ public class OnsetManager : MonoBehaviour
     public delegate void OnsetAction();
     public static event OnsetAction OnOnset;
 
+    public List<List<GameObject>> masterObjectList = new List<List<GameObject>>(10);
+
+    public List<float> onsetActivationTimes;
+    private int onsetActivationTimesIdx = 0;
+
+    [System.Serializable]
+    public struct ActivationInfo
+    {
+        public float colorProb;
+        public float vertexProb;
+        public float dissolveProb;
+        public float sizeProb;
+    }
+
+    [SerializeField] private ActivationInfo groupZeroInfo;
+    [SerializeField] private ActivationInfo groupOneInfo;
+    [SerializeField] private ActivationInfo groupTwoInfo;
+    [SerializeField] private ActivationInfo groupThreeInfo;
+    [SerializeField] private ActivationInfo groupFourInfo;
+    [SerializeField] private ActivationInfo groupFiveInfo;
+    [SerializeField] private ActivationInfo groupSixInfo;
+    [SerializeField] private ActivationInfo groupSevenInfo;
+    [SerializeField] private ActivationInfo groupEightInfo;
+    [SerializeField] private ActivationInfo groupNineInfo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +53,96 @@ public class OnsetManager : MonoBehaviour
         //rend = GetComponent<Renderer>();
         LoadGameData();
         audioSource = GetComponent<AudioSource>();
+
+        for(int i = 0; i < 10; i++)
+        {
+            masterObjectList.Add(new List<GameObject>());
+        }
+        Debug.Log(masterObjectList);
+        
+
+        GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+        foreach (GameObject go in allObjects)
+        {
+            ActivationController myAC = go.GetComponent<ActivationController>();
+            ShaderController mySC = go.GetComponent<ShaderController>();
+
+            if(go.tag == "Tree" && myAC)
+            {
+                HandleTreeActivationGroup(go, myAC);
+                continue;
+            }
+
+            if (myAC && mySC && go.activeInHierarchy)
+            {
+                HandleActivationGroup(go, myAC, mySC);
+            }
+        }
+
+        Debug.Log("GROUP ZER0:");
+        foreach (GameObject go in masterObjectList[0])
+            Debug.Log(go);
+
+        Debug.Log("GROUP One:");
+        foreach (GameObject go in masterObjectList[1])
+            Debug.Log(go);
+
+        //Debug.Log("GROUP Two:");
+        //foreach (GameObject go in masterObjectList[2])
+        //    Debug.Log(go);
+
+
+    }
+
+    private void HandleTreeActivationGroup(GameObject go, ActivationController TreeLevelAC)
+    {
+        foreach(ShaderController ChildSC in go.GetComponentsInChildren<ShaderController>())
+        {
+            HandleActivationGroup(ChildSC.gameObject, TreeLevelAC, ChildSC);
+        }
+    }
+
+    private void HandleActivationGroup(GameObject go, ActivationController myAC, ShaderController mySC)
+    {
+        mySC.shouldColor = false;
+        mySC.shouldVertex = false;
+        mySC.shouldDissolve = false;
+        mySC.shouldSize = false;
+
+        switch (myAC.myGroup)
+        {
+            case ActivationController.Group.Zero:
+                masterObjectList[0].Add(go);
+                break;
+            case ActivationController.Group.One:
+                masterObjectList[1].Add(go);
+                break;
+            case ActivationController.Group.Two:
+                masterObjectList[2].Add(go);
+                break;
+            case ActivationController.Group.Three:
+                masterObjectList[3].Add(go);
+                break;
+            case ActivationController.Group.Four:
+                masterObjectList[4].Add(go);
+                break;
+            case ActivationController.Group.Five:
+                masterObjectList[5].Add(go);
+                break;
+            case ActivationController.Group.Six:
+                masterObjectList[6].Add(go);
+                break;
+            case ActivationController.Group.Seven:
+                masterObjectList[7].Add(go);
+                break;
+            case ActivationController.Group.Eight:
+                masterObjectList[8].Add(go);
+                break;
+            case ActivationController.Group.Nine:
+                masterObjectList[9].Add(go);
+                break;
+
+        }
     }
 
     void Update()
@@ -36,13 +151,14 @@ public class OnsetManager : MonoBehaviour
         {
             audioSource.PlayOneShot(song);
             cur_time = 0;
+            onsetActivationTimesIdx = 0;
             shouldPlay = true;
             Debug.Log("PLAYING SONG NOW");
         }
 
         if (shouldPlay)
         {
-            ColorChanger();
+            OnsetActivator();
         }
     }
 
@@ -82,7 +198,100 @@ public class OnsetManager : MonoBehaviour
         }
     }
 
-    void ColorChanger()
+    private void ActivateShaders(int groupNum)
+    {
+        List<GameObject> myGroup = new List<GameObject>();
+        ActivationInfo AI = new ActivationInfo();
+
+        switch (groupNum)
+        {
+            case 0:
+                myGroup = masterObjectList[groupNum];
+                AI = groupZeroInfo;
+                break;
+            case 1:
+                myGroup = masterObjectList[groupNum];
+                AI = groupOneInfo;
+                break;
+            case 2:
+                myGroup = masterObjectList[groupNum];
+                AI = groupTwoInfo;
+                break;
+            case 3:
+                myGroup = masterObjectList[groupNum];
+                AI = groupThreeInfo;
+                break;
+            case 4:
+                myGroup = masterObjectList[groupNum];
+                AI = groupFourInfo;
+                break;
+            case 5:
+                myGroup = masterObjectList[groupNum];
+                AI = groupFiveInfo;
+                break;
+            case 6:
+                myGroup = masterObjectList[groupNum];
+                AI = groupSixInfo;
+                break;
+            case 7:
+                myGroup = masterObjectList[groupNum];
+                AI = groupSevenInfo;
+                break;
+            case 8:
+                myGroup = masterObjectList[groupNum];
+                AI = groupEightInfo;
+                break;
+            case 9:
+                myGroup = masterObjectList[groupNum];
+                AI = groupNineInfo;
+                break;
+        }
+
+        foreach (GameObject go in myGroup)
+        {
+            ActivateSingleShader(go, AI);
+        }
+    }
+
+    private void ActivateSingleShader(GameObject go, ActivationInfo AI)
+    {
+        List<bool> actList = GetActivations(AI);
+        bool shouldColor = actList[0];
+        bool shouldVertex = actList[1];
+        bool shouldDissolve = actList[2];
+        bool shouldSize = actList[3];
+
+        if (shouldColor) go.GetComponent<ShaderController>().shouldColor = true;
+        if (shouldVertex) go.GetComponent<ShaderController>().shouldVertex = true;
+        if (shouldDissolve) go.GetComponent<ShaderController>().shouldDissolve = true;
+        if (shouldSize) go.GetComponent<ShaderController>().shouldSize = true;
+    }
+
+    private List<bool> GetActivations(ActivationInfo AI)
+    {
+        bool shouldColor = false;
+        bool shouldVertex = false;
+        bool shouldDissolve = false;
+        bool shouldSize = false;
+
+        if (Random.Range(1, 101) <= AI.colorProb) shouldColor = true;
+        if (Random.Range(1, 101) <= AI.vertexProb) shouldVertex = true;
+        if (Random.Range(1, 101) <= AI.dissolveProb) shouldDissolve = true;
+        if (Random.Range(1, 101) <= AI.sizeProb) shouldSize = true;
+
+        if(shouldVertex && shouldDissolve)
+        { 
+            if (Random.Range(1, 101) <= 50)
+                shouldVertex = false;
+            else
+                shouldDissolve = false;
+        }
+
+        return new List<bool> { shouldColor, shouldVertex, shouldDissolve, shouldSize };
+    }
+
+
+    void OnsetActivator()
     {
         cur_time += Time.deltaTime;
 
@@ -92,6 +301,13 @@ public class OnsetManager : MonoBehaviour
             OnOnset();
             onset_idx++;
         }
-       
+
+        //var nearest = array.MinBy(x => Math.Abs((long)x - targetNumber));
+
+        if (onsetActivationTimes[onsetActivationTimesIdx] <= cur_time)
+        {
+            ActivateShaders(onsetActivationTimesIdx);
+            onsetActivationTimesIdx++;
+        }
     }
 }
